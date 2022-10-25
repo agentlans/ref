@@ -1,4 +1,4 @@
-(in-package :foo)
+(in-package :ref)
 
 ;; AREF-style accessors
 (defmacro def-accessor (name args form)

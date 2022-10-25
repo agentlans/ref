@@ -1,7 +1,7 @@
 (ql:quickload 'alexandria)
-(defpackage :foo
+(defpackage :ref
   (:use :cl :alexandria))
-(in-package :foo)
+(in-package :ref)
 
 (load "xref.lisp")
 
