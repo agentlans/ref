@@ -1,9 +1,4 @@
-(ql:quickload 'alexandria)
-(defpackage :ref
-  (:use :cl :alexandria))
 (in-package :ref)
-
-(load "xref.lisp")
 
 (defun ref-replacer (ref objs)
   "Replaces (obj args...) with (ref obj args...)
@@ -15,10 +10,11 @@ if obj matches any of the given objects."
 	  `(,ref ,obj ,@indices)
 	  lst))))
 
+(eval-when (:compile-toplevel)
 (defun with-name (name)
   "Returns the symbol WITH-nameS."
   (read-from-string
-   (format nil "with-~As" name)))
+   (format nil "with-~As" name))))
 
 (defun recursively-list-only (f)
   "Calls f recursively on x but only on lists that make up x.
